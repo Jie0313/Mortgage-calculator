@@ -197,5 +197,25 @@ namespace 房貸試算器
             lblTI.Text = "";
             lblTR.Text = "";
         }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            txtTotalPrice.Text = "";
+            txtFund.Text = "";
+            txtRate.Text = "";
+            txtLoan.Text = "";
+            txtPeriod.Text = "";
+
+            cmbFund.SelectedIndex = 0;
+
+            lblLTP.Text = "";
+            lblMA.Text = "";
+            lblFI.Text = "";
+            lblFP.Text = "";
+            lblTI.Text = "";
+            lblTR.Text = "";
+
+            txtTotalPrice.Focus();
+        }
     }
 }

@@ -313,6 +313,7 @@
             this.btnClear.TabIndex = 28;
             this.btnClear.Text = "清除";
             this.btnClear.UseVisualStyleBackColor = true;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
             // frmCalculator
             // 
