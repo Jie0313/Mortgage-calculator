@@ -168,7 +168,7 @@ namespace 房貸試算器
             double totalInterest = totalPayment - loan;
 
             lblLTP.Text = $"{loan:N2} 元";
-            lblMA.Text = $"{monthly:N2} 元/月";
+            lblMA.Text = $"{monthly:N2} 元 / 月";
             lblFI.Text = $"{firstInterest:N2} 元";
             lblFP.Text = $"{firstPrincipal:N2} 元";
             lblTI.Text = $"{totalInterest:N2} 元";
@@ -189,13 +189,32 @@ namespace 房貸試算器
 
         private void frmCalculator_Load(object sender, EventArgs e)
         {
+            this.BackColor = Color.FromArgb(220, 225, 230);
+            pnlLeft.BackColor = Color.White;
+            pnlRight.BackColor = Color.White;
             cmbFund.SelectedIndex = 0;
+            txtTotalPrice.Text = "12,000,000";
+            txtFund.Text = "20";
+            txtRate.Text = "2.15";
+            txtLoan.Text = "30";
+            txtPeriod.Text = "0";
             lblLTP.Text = "";
             lblMA.Text = "";
             lblFI.Text = "";
             lblFP.Text = "";
             lblTI.Text = "";
             lblTR.Text = "";
+            lblLTP.ForeColor = Color.FromArgb(0, 120, 60);
+            lblMA.ForeColor = Color.FromArgb(0, 120, 60);
+            lblFI.ForeColor = Color.FromArgb(0, 120, 60);
+            lblFP.ForeColor = Color.FromArgb(0, 120, 60);
+            lblTI.ForeColor = Color.FromArgb(0, 120, 60);
+            lblTR.ForeColor = Color.FromArgb(0, 120, 60);
+            lblUnit1.ForeColor = Color.FromArgb(120, 120, 120);
+            lblUnit2.ForeColor = Color.FromArgb(120, 120, 120);
+            lblUnit3.ForeColor = Color.FromArgb(120, 120, 120);
+            lblUnit4.ForeColor = Color.FromArgb(120, 120, 120);
+            lblUnit5.ForeColor = Color.FromArgb(120, 120, 120);
         }
 
         private void btnClear_Click(object sender, EventArgs e)
