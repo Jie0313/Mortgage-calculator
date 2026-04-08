@@ -51,7 +51,11 @@
             this.lblTI = new System.Windows.Forms.Label();
             this.lblTR = new System.Windows.Forms.Label();
             this.btnCal = new System.Windows.Forms.Button();
-            this.lblUnit = new System.Windows.Forms.Label();
+            this.lblUnit2 = new System.Windows.Forms.Label();
+            this.lblUnit1 = new System.Windows.Forms.Label();
+            this.lblUnit3 = new System.Windows.Forms.Label();
+            this.lblUnit4 = new System.Windows.Forms.Label();
+            this.lblUnit5 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lblTotalPrice
@@ -255,21 +259,61 @@
             this.btnCal.UseVisualStyleBackColor = true;
             this.btnCal.Click += new System.EventHandler(this.btnCal_Click);
             // 
-            // lblUnit
+            // lblUnit2
             // 
-            this.lblUnit.AutoSize = true;
-            this.lblUnit.Location = new System.Drawing.Point(339, 127);
-            this.lblUnit.Name = "lblUnit";
-            this.lblUnit.Size = new System.Drawing.Size(41, 15);
-            this.lblUnit.TabIndex = 23;
-            this.lblUnit.Text = "label1";
+            this.lblUnit2.AutoSize = true;
+            this.lblUnit2.Location = new System.Drawing.Point(339, 127);
+            this.lblUnit2.Name = "lblUnit2";
+            this.lblUnit2.Size = new System.Drawing.Size(41, 15);
+            this.lblUnit2.TabIndex = 23;
+            this.lblUnit2.Text = "label1";
+            // 
+            // lblUnit1
+            // 
+            this.lblUnit1.AutoSize = true;
+            this.lblUnit1.Location = new System.Drawing.Point(301, 55);
+            this.lblUnit1.Name = "lblUnit1";
+            this.lblUnit1.Size = new System.Drawing.Size(22, 15);
+            this.lblUnit1.TabIndex = 24;
+            this.lblUnit1.Text = "元";
+            // 
+            // lblUnit3
+            // 
+            this.lblUnit3.AutoSize = true;
+            this.lblUnit3.Location = new System.Drawing.Point(291, 193);
+            this.lblUnit3.Name = "lblUnit3";
+            this.lblUnit3.Size = new System.Drawing.Size(46, 15);
+            this.lblUnit3.TabIndex = 25;
+            this.lblUnit3.Text = "% / 年";
+            // 
+            // lblUnit4
+            // 
+            this.lblUnit4.AutoSize = true;
+            this.lblUnit4.Location = new System.Drawing.Point(315, 259);
+            this.lblUnit4.Name = "lblUnit4";
+            this.lblUnit4.Size = new System.Drawing.Size(22, 15);
+            this.lblUnit4.TabIndex = 26;
+            this.lblUnit4.Text = "年";
+            // 
+            // lblUnit5
+            // 
+            this.lblUnit5.AutoSize = true;
+            this.lblUnit5.Location = new System.Drawing.Point(315, 322);
+            this.lblUnit5.Name = "lblUnit5";
+            this.lblUnit5.Size = new System.Drawing.Size(22, 15);
+            this.lblUnit5.TabIndex = 27;
+            this.lblUnit5.Text = "年";
             // 
             // frmCalculator
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.lblUnit);
+            this.Controls.Add(this.lblUnit5);
+            this.Controls.Add(this.lblUnit4);
+            this.Controls.Add(this.lblUnit3);
+            this.Controls.Add(this.lblUnit1);
+            this.Controls.Add(this.lblUnit2);
             this.Controls.Add(this.btnCal);
             this.Controls.Add(this.lblTR);
             this.Controls.Add(this.lblTI);
@@ -295,6 +339,7 @@
             this.Controls.Add(this.lblTotalPrice);
             this.Name = "frmCalculator";
             this.Text = "房貸試算器";
+            this.Load += new System.EventHandler(this.frmCalculator_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -325,7 +370,11 @@
         private System.Windows.Forms.Label lblTI;
         private System.Windows.Forms.Label lblTR;
         private System.Windows.Forms.Button btnCal;
-        private System.Windows.Forms.Label lblUnit;
+        private System.Windows.Forms.Label lblUnit2;
+        private System.Windows.Forms.Label lblUnit1;
+        private System.Windows.Forms.Label lblUnit3;
+        private System.Windows.Forms.Label lblUnit4;
+        private System.Windows.Forms.Label lblUnit5;
     }
 }
 
