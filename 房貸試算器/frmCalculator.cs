@@ -18,16 +18,22 @@ namespace 房貸試算器
             InitializeComponent();
         }
 
-        double CalculateMonthlyPayment(double loan, double annualRate, int years)
+        double CalculateMonthlyPaymentByMonths(double loan, double annualRate, int months)
         {
             double r = annualRate / 100 / 12;
-            int n = years * 12;               
 
-            double factor = Math.Pow(1 + r, n) * r / (Math.Pow(1 + r, n) - 1);
+            if (months <= 0) return 0;
 
-            double M = loan * factor;
+            if (r == 0)
+                return loan / months;
 
-            return M;
+            double factor = Math.Pow(1 + r, months) * r / (Math.Pow(1 + r, months) - 1);
+            return loan * factor;
+        }
+
+        double CalculateMonthlyPayment(double loan, double annualRate, int years)
+        {
+            return CalculateMonthlyPaymentByMonths(loan, annualRate, years * 12);
         }
 
         private void btnCal_Click(object sender, EventArgs e)
@@ -150,27 +156,48 @@ namespace 房貸試算器
 
             double r = rate / 100 / 12;
             int totalMonths = years * 12;
-            double monthly;
+            int graceMonths = period * 12;
+            int repayMonths = totalMonths - graceMonths;
 
-            if (rate == 0)
+            double monthly;
+            double firstInterest;
+            double firstPrincipal;
+            double totalPayment;
+            double totalInterest;
+
+            if (period > 0)
             {
-                monthly = loan / totalMonths;
+                monthly = loan * r;
+                firstInterest = monthly;
+                firstPrincipal = 0;
+      
+                double gracePayment = monthly * graceMonths;
+
+                double repayMonthly = CalculateMonthlyPaymentByMonths(loan, rate, repayMonths);
+
+                double repayPayment = repayMonthly * repayMonths;
+
+                totalPayment = gracePayment + repayPayment;
+                totalInterest = totalPayment - loan;
             }
             else
             {
-                monthly = CalculateMonthlyPayment(loan, rate, years);
+                monthly = CalculateMonthlyPaymentByMonths(loan, rate, totalMonths);
+                firstInterest = loan * r;
+                firstPrincipal = monthly - firstInterest;
+
+                totalPayment = monthly * totalMonths;
+                totalInterest = totalPayment - loan;
             }
-
-            double firstInterest = loan * r;
-            double firstPrincipal = monthly - firstInterest;
-
-            double totalPayment = monthly * totalMonths;
-            double totalInterest = totalPayment - loan;
 
             lblLTP.Text = $"{loan:N2} 元";
             lblMA.Text = $"{monthly:N2} 元 / 月";
             lblFI.Text = $"{firstInterest:N2} 元";
             lblFP.Text = $"{firstPrincipal:N2} 元";
+            if (period > 0)
+            {
+                lblFP.Text += "（寬限期）";
+            }
             lblTI.Text = $"{totalInterest:N2} 元";
             lblTR.Text = $"{totalPayment:N2} 元";
         }
