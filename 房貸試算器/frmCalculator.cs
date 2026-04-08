@@ -190,6 +190,12 @@ namespace 房貸試算器
         private void frmCalculator_Load(object sender, EventArgs e)
         {
             cmbFund.SelectedIndex = 0;
+            lblLTP.Text = "";
+            lblMA.Text = "";
+            lblFI.Text = "";
+            lblFP.Text = "";
+            lblTI.Text = "";
+            lblTR.Text = "";
         }
     }
 }

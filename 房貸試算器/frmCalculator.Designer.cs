@@ -56,6 +56,7 @@
             this.lblUnit3 = new System.Windows.Forms.Label();
             this.lblUnit4 = new System.Windows.Forms.Label();
             this.lblUnit5 = new System.Windows.Forms.Label();
+            this.btnClear = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblTotalPrice
@@ -262,11 +263,11 @@
             // lblUnit2
             // 
             this.lblUnit2.AutoSize = true;
-            this.lblUnit2.Location = new System.Drawing.Point(339, 127);
+            this.lblUnit2.Location = new System.Drawing.Point(339, 121);
             this.lblUnit2.Name = "lblUnit2";
-            this.lblUnit2.Size = new System.Drawing.Size(41, 15);
+            this.lblUnit2.Size = new System.Drawing.Size(19, 15);
             this.lblUnit2.TabIndex = 23;
-            this.lblUnit2.Text = "label1";
+            this.lblUnit2.Text = "%";
             // 
             // lblUnit1
             // 
@@ -304,11 +305,21 @@
             this.lblUnit5.TabIndex = 27;
             this.lblUnit5.Text = "年";
             // 
+            // btnClear
+            // 
+            this.btnClear.Location = new System.Drawing.Point(342, 370);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Size = new System.Drawing.Size(118, 42);
+            this.btnClear.TabIndex = 28;
+            this.btnClear.Text = "清除";
+            this.btnClear.UseVisualStyleBackColor = true;
+            // 
             // frmCalculator
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnClear);
             this.Controls.Add(this.lblUnit5);
             this.Controls.Add(this.lblUnit4);
             this.Controls.Add(this.lblUnit3);
@@ -375,6 +386,7 @@
         private System.Windows.Forms.Label lblUnit3;
         private System.Windows.Forms.Label lblUnit4;
         private System.Windows.Forms.Label lblUnit5;
+        private System.Windows.Forms.Button btnClear;
     }
 }
 
